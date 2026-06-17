@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -24,6 +25,15 @@ class BfhlIntegrationTest {
     
     @Autowired
     private ObjectMapper objectMapper;
+    
+    @Test
+    @DisplayName("Integration Test - Welcome Endpoint")
+    void testWelcomeEndpointIntegration() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.message").value("Welcome to Java Finserve Health API Test"))
+                .andExpect(jsonPath("$.status").value("running"));
+    }
     
     @Test
     @DisplayName("Integration Test - Example 1 from assignment")

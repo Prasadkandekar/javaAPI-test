@@ -5,6 +5,11 @@ echo Testing JavaAPI Endpoints
 echo ======================================
 
 echo.
+echo [0/6] Testing Root Endpoint (Welcome Message)...
+curl -X GET http://localhost:8080/
+
+echo.
+echo.
 echo [1/6] Testing Example 1: Basic mixed input...
 curl -X POST http://localhost:8080/bfhl -H "Content-Type: application/json" -H "X-Request-Id: REQ-1001" -d "{\"data\": [\"A\", \"1\", \"22\", \"$\", \"B\", \"7\"]}"
 

@@ -1,6 +1,6 @@
-# JavaAPI - Data Processing REST API
+# JavaAPI Test
 
-## API Response Examples
+## API Responses
 
 ### Example 1
 ![Output 1](outputs/out1.png)

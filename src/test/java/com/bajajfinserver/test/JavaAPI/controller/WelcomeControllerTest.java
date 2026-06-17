@@ -33,4 +33,15 @@ class WelcomeControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"));
     }
+    
+    @Test
+    @DisplayName("GET /health - Returns health status")
+    void testHealthEndpoint() throws Exception {
+        mockMvc.perform(get("/health"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("UP"))
+                .andExpect(jsonPath("$.service").value("JavaAPI"))
+                .andExpect(jsonPath("$.message").value("Service is healthy and running"))
+                .andExpect(jsonPath("$.timestamp").exists());
+    }
 }

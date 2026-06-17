@@ -22,7 +22,20 @@ public class WelcomeController {
         response.put("message", "Welcome to Java Finserve Health API Test");
         response.put("version", "1.0.0");
         response.put("status", "running");
-        response.put("endpoints", "GET /bfhl, POST /bfhl");
+        response.put("endpoints", "GET /bfhl, POST /bfhl, GET /health");
+        
+        return ResponseEntity.ok(response);
+    }
+    
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, Object>> health() {
+        log.info("Received request to health endpoint");
+        
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "UP");
+        response.put("service", "JavaAPI");
+        response.put("timestamp", System.currentTimeMillis());
+        response.put("message", "Service is healthy and running");
         
         return ResponseEntity.ok(response);
     }

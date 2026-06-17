@@ -1,0 +1,41 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+HELP.md
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE files
+.idea
+*.iml
+*.ipr
+*.iws
+.vscode
+.settings
+.project
+.classpath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Test scripts
+test-api.bat
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
